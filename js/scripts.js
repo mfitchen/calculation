@@ -1,21 +1,39 @@
+// Business (or back-end) logic:
+
+var add = function(number1, number2) {
+  return number1 + number2;
+};
+
+var subtract = function(number1, number2) {
+  return number1 - number2;
+};
+
+var multiply = function(number1, number2) {
+  return number1 * number2;
+};
+
+var divide = function(number1, number2) {
+  return number1 / number2;
+};
+
+// Everything below this line is user interface (or front-end) logic:
+
 $(document).ready(function() {
-  $("form#triangle").submit(function(event) {
-    var side1 = parseInt($("input#side1").val());
-    var side2 = parseInt($("input#side2").val());
-    var side3 = parseInt($("input#side3").val());
-
-    if (side1 + side2 <= side3 || side2 + side3 <= side1 || side1 + side3 <= side2) {
-      $("#triangle-type").text("Not a triangle");
-    } else if (side1 === side2 && side2 === side3) {
-      $("#triangle-type").text("Equilateral");
-    } else if (side1 === side2 || side2 === side3 || side1 === side3) {
-      $("#triangle-type").text("Isosceles");
-    } else {
-      $("#triangle-type").text("Scalene");
-    }
-
-    $("#result").show();
-
+  $("form#calculator").submit(function() {
     event.preventDefault();
+    var number1 = parseInt($("#input1").val());
+    var number2 = parseInt($("#input2").val());
+    var operator = $("input:radio[name=operator]:checked").val();
+    var result;
+    if (operator === "add") {
+      result = add(number1, number2);
+    } else if (operator === "subtract") {
+      result = subtract(number1, number2);
+    } else if (operator === "multiply") {
+      result = multiply(number1, number2);
+    } else if (operator === "divide") {
+      result = divide(number1, number2);
+    }
+    $("#output").text(result);
   });
 });
