@@ -1,0 +1,17 @@
+.btn {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#result {
+  display: none;
+}
+
+label {
+  display: block;
+}
+
+input {
+  display: block;
+  margin-bottom: 20px;
+}

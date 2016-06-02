@@ -5,7 +5,7 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.12.4.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Triangle</title>
+    <title>Make a Triangle</title>
   </head>
   <body>
     <div class="container">
@@ -13,17 +13,24 @@
 
       <p>To give you a triangle, we need numbers for three lengths, one for each side.</p>
 
-      <form id="triangle">
-        <label for="side1">Side One</label>
-        <input id="side1" type="text">
-        <label for="side2">Side Two</label>
-        <input id="side2" type="text">
-        <label for="side3">Side Three</label>
-        <input id="side3" type="text">
+      <div class="form-group">
+        <form id="triangle">
+          <label for="side1">Side One</label>
+          <input id="side1" class="form-control" type="number" placeholder="Enter a number">
+          <label for="side2">Side Two</label>
+          <input id="side2" class="form-control" type="number" placeholder="Enter a number">
+          <label for="side3">Side Three</label>
+          <input id="side3" class="form-control" type="number" placeholder="Enter a number">
 
-        <button type="submit" class="btn">Let's see if you made a triangle!</button>
+          <button type="submit" class="btn">Let's see if you made a triangle!</button>
 
-      </form>
+        </form>
+      </div>
+
+      <div id="result">
+        <p>Your triangle type is: <span id="triangle-type"></span></p>
+      </div>
+
 
     </div>
   </body>
